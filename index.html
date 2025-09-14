@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>FraudDetect — Final UI</title>
+
+  <!-- Fonts & Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">FraudDetect</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+              aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#upload">Upload</a></li>
+          <li class="nav-item"><a class="nav-link" href="#check">Single Check</a></li>
+          <li class="nav-item"><a class="nav-link" href="#flagged">Flagged</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="content-wrapper container py-5">
+    <!-- UPLOAD -->
+    <section id="upload" class="mb-5 section-card">
+      <h2 class="section-title">Upload Transactions</h2>
+      <p class="text-muted">Upload CSV files to preview transaction data.</p>
+      <form>
+        <input type="file" class="form-control mb-3" accept=".csv">
+        <button type="button" class="btn btn-primary">Upload</button>
+      </form>
+    </section>
+
+    <!-- SINGLE CHECK -->
+    <section id="check" class="mb-5 section-card">
+      <h2 class="section-title">Single Transaction Check</h2>
+      <p class="text-muted">Quick check for individual transactions.</p>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Amount</label>
+          <input type="number" class="form-control" placeholder="100.00">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Time (sec)</label>
+          <input type="number" class="form-control" placeholder="12000">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Hour</label>
+          <input type="number" class="form-control" placeholder="12" min="0" max="23">
+        </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-primary">Check</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- FLAGGED -->
+    <section id="flagged" class="mb-5 section-card">
+      <h2 class="section-title">Flagged Transactions</h2>
+      <p class="text-muted">Suspicious transactions are listed below.</p>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr><th>ID</th><th>Amount</th><th>Time</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>TXN101</td><td>50000</td><td>923000</td><td><span class="badge badge-fraud">Fraud</span></td></tr>
+            <tr><td>TXN102</td><td>120</td><td>3000</td><td><span class="badge badge-ok">OK</span></td></tr>
+            <tr><td>TXN103</td><td>61000</td><td>982343</td><td><span class="badge badge-fraud">Fraud</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-3">
+    © 2025 FraudDetect
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Prevent content hiding behind navbar
+    function adjustPadding() {
+      document.body.style.paddingTop = document.getElementById('mainNav').offsetHeight + 'px';
+    }
+    window.addEventListener('load', adjustPadding);
+    window.addEventListener('resize', adjustPadding);
+  </script>
+</body>
+</html>

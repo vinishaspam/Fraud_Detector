@@ -1,0 +1,81 @@
+:root {
+  --navy: #0b2545;
+  --teal: #00798c;
+  --coral: #ff6b6b;
+  --bg: #f6f8fb;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: #1f2d3d;
+  margin: 0;
+}
+
+#mainNav {
+  background: linear-gradient(90deg, var(--navy), #06182d);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+#mainNav .navbar-brand {
+  color: var(--coral);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#mainNav .nav-link {
+  color: white;
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+#mainNav .nav-link:hover {
+  color: var(--coral);
+}
+
+.content-wrapper {
+  margin-top: 2rem;
+}
+
+/* Section cards */
+.section-card {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(11,37,69,0.08);
+  transition: transform 0.2s;
+}
+.section-card:hover {
+  transform: translateY(-3px);
+}
+.section-title {
+  color: var(--teal);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--coral);
+  border: none;
+}
+.btn-primary:hover {
+  background: #e85b5b;
+}
+
+/* Badges */
+.badge-ok {
+  background: var(--teal);
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+}
+.badge-fraud {
+  background: var(--coral);
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background: var(--navy);
+  color: white;
+}
